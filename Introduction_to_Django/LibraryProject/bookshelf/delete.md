@@ -1,4 +1,3 @@
-new_title.delete
-new_title.save()
+book.delete from bookshelf.models import Book
 
 # deleted
