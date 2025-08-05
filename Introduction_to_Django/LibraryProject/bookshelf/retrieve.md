@@ -1,4 +1,4 @@
-new_book = Book.objects.all()
+book = Book.objects.get.all()
 
 # name = "1984"
 
