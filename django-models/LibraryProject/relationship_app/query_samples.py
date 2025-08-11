@@ -1,9 +1,4 @@
-import os
-import django
+from . import models
+from models import Author,Book,Library,Librarian
+books = Library.objects.get(name="hellolib")
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'relationship_app.settings')
-django.setup()
-
-from relationship_app.models import Book, Library
-
-Book.objects.filter(author__name="John Doe")
