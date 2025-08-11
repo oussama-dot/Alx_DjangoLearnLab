@@ -1,14 +1,12 @@
 from django.urls import path
-from . import views
+from .views import user_login, user_logout, register, list_books, LibraryDetailView
 
 urlpatterns = [
-    # Book management URLs
-    path('add_book/', views.add_book, name='add_book'),
-    path('edit_book/<int:book_id>/', views.edit_book, name='edit_book'),
-    path('delete_book/<int:book_id>/', views.delete_book, name='delete_book'),
+    path("books/", list_books, name="list_books"),  # your existing view
+    path("library/<int:pk>/", LibraryDetailView.as_view(), name="library_detail"),  # existing CBV
 
-    # Other views
-    path('', views.home, name='home'),  
+    # Auth URLs
+    path("login/", user_login, name="login"),
+    path("logout/", user_logout, name="logout"),
+    path("register/", register, name="register"),
 ]
-
-
