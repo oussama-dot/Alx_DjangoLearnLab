@@ -7,7 +7,3 @@ from .models import Book, Library
 def list_books(request):
     books = Book.objects.all()
     return render(request, "list_books.html", {"books": books})
-class LibraryDetailView(DetailView):
-    model = Library
-    template_name = "relationship_app/library_detail.html"  # ✅ exact match
-    context_object_name = "library"
