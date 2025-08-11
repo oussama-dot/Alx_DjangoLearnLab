@@ -8,3 +8,12 @@ library = Library.objects.get(name=library_name)
 # 2. Get all books in that library
 books = library.books.all()
 
+author_name = "George Orwell"
+
+# 1. Get the author by name
+author = Author.objects.get(name=author_name)
+
+# 2. Get all books by that author
+books_by_author = Book.objects.filter(author=author)
+
+
