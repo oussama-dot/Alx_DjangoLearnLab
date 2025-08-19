@@ -1,0 +1,15 @@
+<!-- bookshelf/templates/bookshelf/book_list.html -->
+
+<form method="get" action="{% url 'search_books' %}">
+  {% csrf_token %} {{ form.query.label_tag }} {{ form.query }}
+  <button type="submit">Search</button>
+</form>
+
+<h2>Search Results:</h2>
+<ul>
+  {% for book in books %}
+  <li>{{ book.title }}</li>
+  {% empty %}
+  <li>No books found.</li>
+  {% endfor %}
+</ul>
