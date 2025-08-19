@@ -2,7 +2,7 @@
 
 from django.shortcuts import render
 from .models import Book
-from .forms import BookSearchForm
+from .forms import BookSearchForm, ExampleForm  # ✅ Correct combined import
 
 def search_books(request):
     form = BookSearchForm(request.GET)
