@@ -46,3 +46,23 @@ CSP_IMG_SRC = ("'self'", 'data:')
 
 # ✅ You already have this
 AUTH_USER_MODEL = "bookshelf.CustomUser"
+
+# 🔐 Redirect all HTTP to HTTPS
+SECURE_SSL_REDIRECT = True  # ✅ Forces HTTPS
+
+# 🔐 HTTP Strict Transport Security (HSTS) - tells browsers to always use HTTPS
+SECURE_HSTS_SECONDS = 31536000  # ✅ 1 year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # ✅ Apply to subdomains too
+SECURE_HSTS_PRELOAD = True  # ✅ Allow preload list submission
+
+# ✅ Add comments for documentation
+
+# 🔒 Ensure cookies only work over HTTPS
+SESSION_COOKIE_SECURE = True  # ✅ For session cookies
+CSRF_COOKIE_SECURE = True     # ✅ For CSRF protection
+
+# Security Headers - Protect against clickjacking, XSS, and MIME sniffing
+
+X_FRAME_OPTIONS = 'DENY'  # Prevent your site from being framed (clickjacking protection)
+SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevent MIME sniffing
+SECURE_BROWSER_XSS_FILTER = True  # Enable browser XSS filter
